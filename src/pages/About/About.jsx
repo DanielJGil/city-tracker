@@ -1,8 +1,10 @@
+import PageNav from "../../components/PageNav/PageNav";
 import styles from "./About.module.css";
 
 function About() {
   return (
     <main className={styles.about}>
+      <PageNav />
       <section>
         <img
           src="/public/desert-van.jpg"

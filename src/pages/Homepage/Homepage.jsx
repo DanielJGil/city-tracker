@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+import PageNav from "../../components/PageNav/PageNav";
 import styles from "./Homepage.module.css";
 
 function Homepage() {
   return (
     <main className={styles.homepage}>
+      <PageNav />
       <section>
         <h1>
           You travel the world.
@@ -15,7 +18,7 @@ function Homepage() {
           family where you&apos;ve travelled.
         </h2>
 
-        <p>Start tracking now</p>
+        <Link className="btn">Start tracking now</Link>
       </section>
       {/* <p>
         Image credit: <br /> Unsplash ANIRUDH

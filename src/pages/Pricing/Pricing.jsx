@@ -1,8 +1,10 @@
+import PageNav from "../../components/PageNav/PageNav";
 import styles from "./Pricing.module.css";
 
 function Pricing() {
   return (
     <main className={styles.pricing}>
+      <PageNav />
       <section>
         <div>
           <h2>
