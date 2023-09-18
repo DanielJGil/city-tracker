@@ -2,8 +2,8 @@
   height: calc(100vh - 5rem);
   margin: 2.5rem;
   background-image: linear-gradient(
-      rgba(36, 42, 46, 0.6),
-      rgba(36, 42, 46, 0.6)
+      rgba(36, 42, 46, 0.7),
+      rgba(36, 42, 46, 0.7)
     ),
     url("/public/night-earth.jpg");
   background-size: cover;

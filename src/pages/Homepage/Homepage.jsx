@@ -18,7 +18,9 @@ function Homepage() {
           family where you&apos;ve travelled.
         </h2>
 
-        <Link className="btn">Start tracking now</Link>
+        <Link to="login" className="btn">
+          Start tracking now
+        </Link>
       </section>
       {/* <p>
         Image credit: <br /> Unsplash ANIRUDH

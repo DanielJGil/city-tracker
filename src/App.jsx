@@ -4,6 +4,9 @@ import Homepage from "./pages/Homepage/Homepage";
 import Login from "./pages/Login/Login";
 import Pricing from "./pages/Pricing/Pricing";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import AppPage from "./pages/AppPage/AppPage";
+import CityList from "./components/CityList/CityList";
+import CountryList from "./components/CountryList/CountryList";
 
 function App() {
   return (
@@ -13,6 +16,10 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
+        <Route path="app" element={<AppPage />}>
+          <Route path="cities" element={<CityList />} />
+          <Route path="countries" element={<CountryList />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
