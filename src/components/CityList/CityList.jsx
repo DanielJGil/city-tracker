@@ -1,8 +1,11 @@
-function CityList() {
+import CityItem from "../CityItem/CityItem";
+import styles from "./CityList.module.css";
+
+function CityList({ cities }) {
   return (
-    <div>
-      <p>List of cities</p>
-    </div>
+    <ul className={styles.cityList}>
+      {cities && cities.map((city, i) => <CityItem city={city} key={i} />)}
+    </ul>
   );
 }
 

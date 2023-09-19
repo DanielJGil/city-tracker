@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "cityName": "Tallinn",
+      "country": "Estonia",
+      "emoji": "🇪🇪",
+      "date": "2023-09-16T07:29:17.976Z",
+      "notes": "Best city",
+      "position": {
+        "lat": "59.40036514079251",
+        "lng": "24.719238281250004"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Malaga",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-09-16T07:44:39.635Z",
+      "notes": "wooooo",
+      "position": {
+        "lat": "36.70365959719456",
+        "lng": "-4.438476562500001"
+      },
+      "id": 98443200
+    }
+  ]
+}
