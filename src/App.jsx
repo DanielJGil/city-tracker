@@ -11,7 +11,7 @@ import Form from "./components/Form/Form";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [cities, setCities] = useState(null);
+  const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(function () {
@@ -39,9 +39,18 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppPage />}>
-          <Route index element={<Navigate replace to="cities" />} />
-          <Route path="cities" element={<CityList cities={cities} />} />
-          <Route path="countries" element={<CountryList />} />
+          <Route
+            index
+            element={<Navigate replace to="cities" isLoading={isLoading} />}
+          />
+          <Route
+            path="cities"
+            element={<CityList cities={cities} isLoading={isLoading} />}
+          />
+          <Route
+            path="countries"
+            element={<CountryList cities={cities} isLoading={isLoading} />}
+          />
           <Route
             path="form"
             element={<Form cities={cities} setCities={setCities} />}
