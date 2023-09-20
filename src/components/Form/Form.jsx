@@ -1,37 +1,19 @@
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Button from "../Button/Button";
 
-function Form({ cities, setCities }) {
+function Form() {
   const [cityName, setCityName] = useState("");
   const [date, setDate] = useState("");
   const [notes, setNotes] = useState("");
 
   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    if (!cityName || !date) return;
-
-    const newCity = {
-      cityName,
-      country: "Estonia",
-      date,
-      emoji: "EE",
-      id: 123,
-      notes,
-      position: "latlng",
-    };
-
-    await setCities([...cities, newCity]);
-    navigate("/app/cities");
-  }
-
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -39,7 +21,6 @@ function Form({ cities, setCities }) {
           value={cityName}
           onChange={(e) => setCityName(e.target.value)}
         />
-        <span className={styles.flag}>---</span>
       </div>
 
       <div className={styles.row}>
@@ -62,8 +43,16 @@ function Form({ cities, setCities }) {
       </div>
 
       <div className={styles.buttons}>
-        <Link className={styles.addBtn}>Add</Link>
-        <Link className={styles.backBtn}>&larr; Back</Link>
+        <Button type="addBtn">Add</Button>
+        <Button
+          type="backBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(-1);
+          }}
+        >
+          &larr; Back
+        </Button>
       </div>
     </form>
   );

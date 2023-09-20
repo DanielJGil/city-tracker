@@ -18,7 +18,7 @@ function Homepage() {
           family where you&apos;ve travelled.
         </h2>
 
-        <Link to="login" className="btn">
+        <Link to="login" className={styles.btn}>
           Start tracking now
         </Link>
       </section>

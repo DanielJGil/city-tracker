@@ -32,3 +32,16 @@
   color: #aaa;
   margin-bottom: 2.5rem;
 }
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  background-color: #00a6ff;
+  color: #242a2e;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 7px;
+}
