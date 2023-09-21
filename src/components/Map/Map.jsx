@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function Map() {
   const { cities } = useCities();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get("lat");
@@ -23,7 +23,7 @@ function Map() {
   );
 
   return (
-    <div className={styles.mapContainer} onClick={() => navigate("form")}>
+    <div className={styles.mapContainer}>
       <MapContainer
         className={styles.map}
         center={mapPosition}
@@ -41,7 +41,7 @@ function Map() {
             key={city.id}
           >
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              <span>{city.emoji}</span> <span>{city.cityName}</span>
             </Popup>
           </Marker>
         ))}
