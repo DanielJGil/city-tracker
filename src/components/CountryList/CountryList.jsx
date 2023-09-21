@@ -1,8 +1,11 @@
+import { useCities } from "../../contexts/CitiesContext";
 import CountryItem from "../CountryItem/CountryItem";
 import Loader from "../Loader/Loader";
 import styles from "./CountryList.module.css";
 
-function CountryList({ cities, isLoading }) {
+function CountryList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <Loader />;
 
   const countries = cities.reduce((arr, city) => {

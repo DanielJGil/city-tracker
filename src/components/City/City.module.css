@@ -45,3 +45,8 @@
   font-size: 1.6rem;
   color: #00a6ff;
 }
+
+.city::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}

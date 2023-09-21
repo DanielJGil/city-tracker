@@ -1,9 +1,12 @@
+import { useCities } from "../../contexts/CitiesContext";
 import CityItem from "../CityItem/CityItem";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
 import styles from "./CityList.module.css";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <Loader />;
 
   if (!cities.length)
