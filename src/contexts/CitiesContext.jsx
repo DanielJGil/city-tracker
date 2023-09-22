@@ -1,5 +1,4 @@
-import { createContext, useContext } from "react";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CitiesContext = createContext();
 
@@ -26,11 +25,18 @@ function CitiesProvider({ children }) {
   }, []);
 
   function getCity(id) {
-    cities.map((city) => city.id === Number(id) && setCurrentCity(city));
+    cities.map((city) => String(city.id) === id && setCurrentCity(city));
+  }
+
+  function addCity(newCity) {
+    setCities((cities) => [...cities, newCity]);
+    setCurrentCity(newCity);
   }
 
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
+    <CitiesContext.Provider
+      value={{ cities, isLoading, currentCity, getCity, addCity }}
+    >
       {children}
     </CitiesContext.Provider>
   );

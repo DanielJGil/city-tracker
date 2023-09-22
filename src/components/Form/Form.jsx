@@ -7,16 +7,21 @@ import BackButton from "../BackButton/BackButton";
 import { useUrlLocation } from "../../hooks/useUrlLocation";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
+import { useCities } from "../../contexts/CitiesContext";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
+  const [emoji, setEmoji] = useState("");
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
-
+  const { addCity } = useCities();
   const [lat, lng] = useUrlLocation();
+
+  const navigate = useNavigate();
 
   useEffect(
     function () {
@@ -39,6 +44,7 @@ function Form() {
 
           setCityName(data.city);
           setCountry(data.countryName);
+          setEmoji(data.countryCode);
         } catch (err) {
           setGeocodingError(err.message);
         } finally {
@@ -50,12 +56,34 @@ function Form() {
     [lat, lng]
   );
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const id = crypto.randomUUID();
+
+    const newCity = {
+      cityName,
+      country,
+      emoji,
+      date,
+      notes,
+      position: {
+        lat,
+        lng,
+      },
+      id,
+    };
+
+    addCity(newCity);
+    navigate("/app");
+  }
+
   if (geocodingError) return <Message message={geocodingError} />;
 
   if (isLoadingGeocoding) return <Loader />;
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input

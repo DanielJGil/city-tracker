@@ -16,11 +16,7 @@ function City() {
   const { id } = useParams();
   const { getCity, currentCity } = useCities();
 
-  const { cityName, emoji, notes, date } = currentCity;
-
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const lat = searchParams.get("lat");
-  // const lng = searchParams.get("lng");
+  const { cityName, notes, date, country } = currentCity;
 
   useEffect(
     function () {
@@ -34,7 +30,7 @@ function City() {
       <div className={styles.row}>
         <h6>City Name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          {cityName}, {country}
         </h3>
       </div>
       <div className={styles.row}>
