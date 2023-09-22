@@ -40,3 +40,24 @@
   background: none;
   border: 1px solid currentColor;
 }
+
+.useLocationBtn {
+  position: absolute;
+  z-index: 1000;
+  font-size: 1.4rem;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00a6ff;
+  color: #242a2e;
+  box-shadow: 0 0.4rem 1.2rem rgba(36, 42, 46, 0.16);
+
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+}

@@ -23,6 +23,7 @@ function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
+
         <ReactDatePicker
           id="date"
           onChange={(date) => setDate(date)}
