@@ -33,9 +33,13 @@ function CitiesProvider({ children }) {
     setCurrentCity(newCity);
   }
 
+  function deleteCity(id) {
+    setCities(cities.filter((city) => String(city.id) !== String(id)));
+  }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, currentCity, getCity, addCity }}
+      value={{ cities, isLoading, currentCity, getCity, addCity, deleteCity }}
     >
       {children}
     </CitiesContext.Provider>
