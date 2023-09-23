@@ -15,6 +15,10 @@
   position: relative;
 }
 
+.row textarea {
+  resize: none;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;

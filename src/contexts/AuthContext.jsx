@@ -12,6 +12,7 @@ const FAKE_USER = {
 const initialState = {
   user: null,
   isAuthenticated: false,
+  loginFailed: false,
 };
 
 function reducer(state, action) {
@@ -21,6 +22,7 @@ function reducer(state, action) {
         ...state,
         user: action.payload,
         isAuthenticated: true,
+        loginFailed: false,
       };
 
     case "logout":
@@ -29,13 +31,20 @@ function reducer(state, action) {
         user: null,
         isAuthenticated: false,
       };
+
+    case "login/failed":
+      return {
+        ...state,
+        loginFailed: action.payload,
+      };
+
     default:
       throw new Error("Unknown action");
   }
 }
 
 function AuthProvider({ children }) {
-  const [{ user, isAuthenticated }, dispatch] = useReducer(
+  const [{ user, isAuthenticated, loginFailed }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -43,6 +52,7 @@ function AuthProvider({ children }) {
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password)
       dispatch({ type: "login", payload: FAKE_USER });
+    else dispatch({ type: "login/failed", payload: true });
   }
 
   function logout() {
@@ -56,6 +66,8 @@ function AuthProvider({ children }) {
         isAuthenticated,
         login,
         logout,
+        loginFailed,
+        dispatch,
       }}
     >
       {children}

@@ -9,7 +9,7 @@ function Login() {
   const [email, setEmail] = useState("user@email.com");
   const [password, setPassword] = useState("123456");
 
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAuthenticated, loginFailed } = useAuth();
 
   const navigate = useNavigate();
 
@@ -50,8 +50,10 @@ function Login() {
           />
         </div>
 
-        <div>
+        <div className={styles.bottomRow}>
           <Button type="loginBtn">Login</Button>
+
+          {loginFailed && <p>* Email or password is incorrect</p>}
         </div>
       </form>
     </main>

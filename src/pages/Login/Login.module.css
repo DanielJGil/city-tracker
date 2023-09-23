@@ -1,8 +1,7 @@
 .login {
-  margin: 2.5rem;
   padding: 2.5rem 5rem;
   background-color: #2d3439;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh);
 }
 
 .form {
@@ -22,4 +21,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomRow p {
+  font-size: 1.5rem;
+  color: #ff3737;
 }
