@@ -43,6 +43,9 @@ function reducer(state, action) {
           (city) => String(city.id) !== String(action.payload)
         ),
       };
+
+    default:
+      throw new Error("Unknown action type");
   }
 }
 
