@@ -1,0 +1,7 @@
+.spinnerFullpage {
+  height: calc(100vh);
+  background-color: #2d3439;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
