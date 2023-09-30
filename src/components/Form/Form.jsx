@@ -10,6 +10,8 @@ import Message from "../Message/Message";
 import { useCities } from "../../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
 function Form() {
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
@@ -30,7 +32,7 @@ function Form() {
           setIsLoadingGeocoding(true);
           setGeocodingError("");
           const res = await fetch(
-            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
+            `${API_URL}?latitude=${lat}&longitude=${lng}`
           );
 
           if (!res.ok) throw new Error("There was a problem fetching the data");

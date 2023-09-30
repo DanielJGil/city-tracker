@@ -3,6 +3,7 @@ import styles from "./City.module.css";
 import { useCities } from "../../contexts/CitiesContext";
 import { useEffect } from "react";
 import BackButton from "../BackButton/BackButton";
+import Loader from "../Loader/Loader";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -14,7 +15,7 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
-  const { getCity, currentCity } = useCities();
+  const { getCity, currentCity, isLoading } = useCities();
 
   const { cityName, notes, date, country } = currentCity;
 
@@ -24,6 +25,8 @@ function City() {
     },
     [id, getCity]
   );
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className={styles.city}>

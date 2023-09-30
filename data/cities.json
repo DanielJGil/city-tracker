@@ -3,50 +3,50 @@
     {
       "cityName": "Tallinn",
       "country": "Estonia",
-      "emoji": "🇪🇪",
-      "date": "2023-09-16T07:29:17.976Z",
-      "notes": "Beautiful city!",
+      "emoji": "EE",
+      "date": "2023-09-30T13:40:53.243Z",
+      "notes": "Lovely city!",
       "position": {
-        "lat": "59.40036514079251",
-        "lng": "24.719238281250004"
+        "lat": "59.45624336447568",
+        "lng": "24.741210937500004"
       },
-      "id": 98443199
+      "id": "ac03f1e2-a387-4e49-975a-9dc724076d10"
     },
     {
-      "cityName": "Malaga",
+      "cityName": "Stockholm",
+      "country": "Sweden",
+      "emoji": "SE",
+      "date": "2023-09-30T13:53:23.628Z",
+      "notes": "Awesome!",
+      "position": {
+        "lat": "59.33318942659219",
+        "lng": "18.072509765625004"
+      },
+      "id": "6804e938-1088-4ef7-bad5-450f5b01a17b"
+    },
+    {
+      "cityName": "Warsaw",
+      "country": "Poland",
+      "emoji": "PL",
+      "date": "2023-09-30T13:53:47.162Z",
+      "notes": "Had a lot of fun!",
+      "position": {
+        "lat": "52.23368724057246",
+        "lng": "21.01272583007813"
+      },
+      "id": "2c8ed9e2-8937-4821-92ac-3dc8bf1202f5"
+    },
+    {
+      "cityName": "Madrid",
       "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-09-16T07:44:39.635Z",
-      "notes": "Amazing town!",
+      "emoji": "ES",
+      "date": "2023-09-30T13:55:28.258Z",
+      "notes": "Great food!",
       "position": {
-        "lat": "36.70365959719456",
-        "lng": "-4.438476562500001"
+        "lat": "40.413496049701955",
+        "lng": "-3.7353515625000004"
       },
-      "id": 98443200
-    },
-    {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "Best holiday!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Great restaurants!",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+      "id": "b35298f0-d90d-4dd9-aa69-19eab2c2a822"
     }
   ]
 }
